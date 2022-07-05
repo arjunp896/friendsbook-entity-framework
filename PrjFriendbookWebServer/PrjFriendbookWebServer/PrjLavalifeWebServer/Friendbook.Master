@@ -1,0 +1,230 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Friendbook.master.cs" Inherits="PrjFriendbookWebServer.Friendbook" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1000" />
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <meta name="description" content="Match interests and make connections with Lavalife’s online dating site. Browse profiles, send messages and meet new people today." />
+
+
+    <!-- Styles -->
+    <link href="css/finalbuild.css" rel="stylesheet" />
+    <link href="css/bootstrap-tour.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" async="" src="http://cdn.mplxtms.com/s/MasterTMS.min.js#1614"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/angulartics.js"></script>
+    <script src="js/angulartics-ga.js"></script>
+    <script src="js/dashboard.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <div class="ng-scope">
+
+
+            <div class="navbar navbar-default navbar-static-top container ng-scope" role="navigation" style="margin-bottom: 0px; border-left: 1px solid #ccc; border-right: 1px solid #ccc;">
+
+                <!-- header logo -->
+
+                <div class="col-xs-3" style="padding-left: 40px;">
+                    <a href="dashboard.aspx" id="logo" cj-affiliate=""></a>
+                </div>
+
+
+                <div class="col-xs-3 test" style="padding: 0px;">
+
+                    <ul class="main-nav">
+
+                        <!-- Home -->
+
+                        <li>
+                            <a cj-affiliate="" href="Dashboard.aspx">Home</a>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </li>
+
+                        <!-- Discussion -->
+
+                        <li>
+                            <a id="formLink" href="Discussion.aspx" style="cursor: pointer;">Discussion</a>
+                            <%--                        <span></span>
+                        <span></span>
+                        <span></span>--%>
+                        </li>
+
+                        <!-- Blog -->
+
+                        <li><%--<a href="//blog.lavalife.com/" target="_blank">Blog</a>--%></li>
+                    </ul>
+
+                </div>
+
+                <form method="POST" class="forum-form ng-pristine ng-valid has-validation-callback" action="http://discussion.lavalife.com/auto_login.php" style="display: none;">
+                    <input type="hidden" name="jsessionId">
+                    <input type="hidden" name="userId">
+                    <input type="hidden" name="email_address">
+                    <input type="hidden" name="username">
+                    <input type="hidden" name="cj">
+                </form>
+
+                <!-- profile in navbar -->
+
+                <div class="col-xs-3 my-nav" style="padding-left: 30px;">
+                    <div class="pull-left devider-horizontal"></div>
+                    <div class="pull-left" style="padding-left: 10px;">
+                        <img class="pull-left avatar-me" ng-src="/images/pictures/1649286673290.jpeg" err-src="images/ll_profile_blank_img.png" src="/images/pictures/1649286673290.jpeg" />
+
+                        <p class="pull-right user-info ng-binding">
+                            <asp:Literal ID="litUsername" runat="server"></asp:Literal>
+                            <span class="ng-binding">23, Montreal</span>
+                        </p>
+                    </div>
+
+                    <ul>
+                        <li><a href="dashboard.html#/myProfile/" class="profile" cj-affiliate="">My Profile</a></li>
+                        <%--                    <li><a href="dashboard.html#/account/" class="account" cj-affiliate="">My Account</a></li>
+                    <li><a href="help-center.html" target="_blank" class="help">Help</a></li>--%>
+                        <li><a ng-click="clearCookie();" href="LogOut.aspx" class="logout">Logout</a></li>
+                    </ul>
+
+                    <div class="caret" style="right: -5px;"></div>
+
+                </div>
+            </div>
+
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+        </div>
+
+        <div ng-include="'partials/footer.html'" class="ng-scope">
+            <style class="ng-scope">
+                footer.container {
+                    padding: 0px;
+                    border-left: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                }
+
+                .footer-holder {
+                    padding: 0px;
+                    position: relative;
+                    margin: auto;
+                    background-color: #f0f0f0;
+                    padding: 15px;
+                }
+
+                    .footer-holder p {
+                        color: #bdbdbd;
+                        font-size: 9px;
+                        margin-bottom: 0px;
+                        margin-top: 20px;
+                        line-height: 120%;
+                        font-weight: normal;
+                        text-align: center;
+                    }
+
+                .footer-links p {
+                    text-align: center;
+                    background: none;
+                    margin-top: 0px;
+                }
+
+                    .footer-links p a {
+                        font-weight: 500;
+                        color: #b2b2b2;
+                        font-size: 14px;
+                        margin: 0 10px;
+                    }
+
+                        .footer-links p a:hover {
+                            color: #ff0000;
+                        }
+            </style>
+
+
+            <footer class="container ng-scope">
+                <div class="footer-holder col-xs-12">
+
+                    <div class="col-xs-3">
+                        <img style="margin-top: 5px;" src="images/icons/ll_logo_footer_gray.png">
+                    </div>
+
+                    <div class="col-xs-7">
+                        <p>
+                            All right Reversed, LaSalle College
+                        </p>
+                    </div>
+
+                    <div class="col-xs-2"></div>
+
+                </div>
+
+            </footer>
+
+            <div class="chat-box col-lg-2 col-md-3 ng-scope ng-hide" ng-show="chatBoxOpen == true">
+
+                <input type="checkbox" checked="">
+                <div class="fake-label" data-expanded="Close Chatbox" data-collapsed="Open Chatbox"><span ng-click="functions.closeChatBox()" stop-event="click">X</span></div>
+
+                <div class="chat-box-content col-lg-12 col-md-12 col-sm-12" scroll-glue="">
+
+                    <!-- ngRepeat: message in chatBoxConvo -->
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 chat-send-holder">
+                        <textarea class="col-lg-12 col-md-12 col-sm-12 ng-pristine ng-valid" placeholder="Reply..." ng-model="chatBoxMessage" id="reply-chatbox" autogrow="" style="overflow: hidden; overflow-wrap: break-word; height: 40px;"></textarea>
+                        <div class="col-lg-4 col-md-4 col-sm-4 pull-right" style="margin-bottom: 12px; padding: 0px;">
+                            <button id="reply-message" class="sign-up" style="margin: 0px;" ng-click="functions.sendChatBox(chatBoxConvo[0].userId,chatBoxMessage,chatBoxConvo[0].imageUser,avatar)">SEND</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+        <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/app.js?v=2.0"></script>
+        <script src="js/controllers.js?v=2.0"></script>
+        <script src="js/functions.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.multiselect').multiselect({
+                    numberDisplayed: 1,
+                    selectedClass: 'multi-active',
+                    maxHeight: 200
+                });
+                $('select:not(.multiselect)').selectric({
+                    disableOnMobile: false
+                });
+                $("input[type='radio']:not(label.radio input), input[type='checkbox']:not(label.checkbox input, .chat-box input) ").ionCheckRadio();
+            });
+
+            $("body").backstretch("images/backgrounds/lavalife_regist_welcome_fullscreen_blur.jpg");
+        </script>
+        <div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 625px; width: 1349px; z-index: -999999; position: fixed;">
+            <img src="images/backgrounds/lavalife_regist_welcome_fullscreen_blur.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1349px; height: 758.812px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -66.9062px;">
+        </div>
+
+</body>
+</html>

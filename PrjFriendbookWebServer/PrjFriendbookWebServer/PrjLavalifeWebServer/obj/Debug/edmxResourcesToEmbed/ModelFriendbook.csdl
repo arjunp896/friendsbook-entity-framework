@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FriendbookSQLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BodyType">
+    <Key>
+      <PropertyRef Name="RefBodyType" />
+    </Key>
+    <Property Name="RefBodyType" Type="Int32" Nullable="false" />
+    <Property Name="BodyTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DrinkingType">
+    <Key>
+      <PropertyRef Name="RefDrinking" />
+    </Key>
+    <Property Name="RefDrinking" Type="Int32" Nullable="false" />
+    <Property Name="DrinkingType1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="RefEducation" />
+    </Key>
+    <Property Name="RefEducation" Type="Int32" Nullable="false" />
+    <Property Name="EducationType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Ethinicity">
+    <Key>
+      <PropertyRef Name="RefEthinicity" />
+    </Key>
+    <Property Name="RefEthinicity" Type="Int32" Nullable="false" />
+    <Property Name="EthinicityName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Interested">
+    <Key>
+      <PropertyRef Name="RefInterested" />
+    </Key>
+    <Property Name="RefInterested" Type="Int32" Nullable="false" />
+    <Property Name="InterestedType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LookingFor">
+    <Key>
+      <PropertyRef Name="RefLookingFor" />
+    </Key>
+    <Property Name="RefLookingFor" Type="Int32" Nullable="false" />
+    <Property Name="LookingType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Religion">
+    <Key>
+      <PropertyRef Name="RefReligion" />
+    </Key>
+    <Property Name="RefReligion" Type="Int32" Nullable="false" />
+    <Property Name="ReligionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SmokingType">
+    <Key>
+      <PropertyRef Name="RefSmoking" />
+    </Key>
+    <Property Name="RefSmoking" Type="Int32" Nullable="false" />
+    <Property Name="SmokingType1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="RefUser" />
+    </Key>
+    <Property Name="RefUser" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="psw" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="DateTime" Precision="3" />
+    <Property Name="postalcode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="height" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RefBodyType" Type="Int32" />
+    <Property Name="RefEthinicity" Type="Int32" />
+    <Property Name="RefReligion" Type="Int32" />
+    <Property Name="RefInterested" Type="Int32" />
+    <Property Name="RefLookingFor" Type="Int32" />
+    <Property Name="RefEducation" Type="Int32" />
+    <Property Name="RefSmoking" Type="Int32" />
+    <Property Name="RefDrinking" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="FriendbookSQLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BodyTypes" EntityType="Self.BodyType" />
+    <EntitySet Name="DrinkingTypes" EntityType="Self.DrinkingType" />
+    <EntitySet Name="Educations" EntityType="Self.Education" />
+    <EntitySet Name="Ethinicities" EntityType="Self.Ethinicity" />
+    <EntitySet Name="Interesteds" EntityType="Self.Interested" />
+    <EntitySet Name="LookingFors" EntityType="Self.LookingFor" />
+    <EntitySet Name="Religions" EntityType="Self.Religion" />
+    <EntitySet Name="SmokingTypes" EntityType="Self.SmokingType" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Messages" EntityType="FriendbookSQLModel.Message" />
+  </EntityContainer>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="RefMessage" />
+    </Key>
+    <Property Name="RefMessage" Type="Int32" Nullable="false" />
+    <Property Name="Message1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RefSender" Type="Int32" />
+    <Property Name="RefReceiver" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="IsNew" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

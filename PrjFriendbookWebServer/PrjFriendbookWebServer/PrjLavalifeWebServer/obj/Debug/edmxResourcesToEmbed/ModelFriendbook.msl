@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FriendbookSQLModelStoreContainer" CdmEntityContainer="FriendbookSQLEntities">
+    <EntitySetMapping Name="BodyTypes">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.BodyType">
+        <MappingFragment StoreEntitySet="BodyTypes">
+          <ScalarProperty Name="RefBodyType" ColumnName="RefBodyType" />
+          <ScalarProperty Name="BodyTypeName" ColumnName="BodyTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrinkingTypes">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.DrinkingType">
+        <MappingFragment StoreEntitySet="DrinkingTypes">
+          <ScalarProperty Name="RefDrinking" ColumnName="RefDrinking" />
+          <ScalarProperty Name="DrinkingType1" ColumnName="DrinkingType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Educations">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.Education">
+        <MappingFragment StoreEntitySet="Educations">
+          <ScalarProperty Name="RefEducation" ColumnName="RefEducation" />
+          <ScalarProperty Name="EducationType" ColumnName="EducationType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ethinicities">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.Ethinicity">
+        <MappingFragment StoreEntitySet="Ethinicities">
+          <ScalarProperty Name="RefEthinicity" ColumnName="RefEthinicity" />
+          <ScalarProperty Name="EthinicityName" ColumnName="EthinicityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interesteds">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.Interested">
+        <MappingFragment StoreEntitySet="Interested">
+          <ScalarProperty Name="RefInterested" ColumnName="RefInterested" />
+          <ScalarProperty Name="InterestedType" ColumnName="InterestedType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LookingFors">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.LookingFor">
+        <MappingFragment StoreEntitySet="LookingFor">
+          <ScalarProperty Name="RefLookingFor" ColumnName="RefLookingFor" />
+          <ScalarProperty Name="LookingType" ColumnName="LookingType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religions">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.Religion">
+        <MappingFragment StoreEntitySet="Religions">
+          <ScalarProperty Name="RefReligion" ColumnName="RefReligion" />
+          <ScalarProperty Name="ReligionName" ColumnName="ReligionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmokingTypes">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.SmokingType">
+        <MappingFragment StoreEntitySet="SmokingTypes">
+          <ScalarProperty Name="RefSmoking" ColumnName="RefSmoking" />
+          <ScalarProperty Name="SmokingType1" ColumnName="SmokingType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="RefUser" ColumnName="RefUser" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="psw" ColumnName="psw" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="postalcode" ColumnName="postalcode" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="RefBodyType" ColumnName="RefBodyType" />
+          <ScalarProperty Name="RefEthinicity" ColumnName="RefEthinicity" />
+          <ScalarProperty Name="RefReligion" ColumnName="RefReligion" />
+          <ScalarProperty Name="RefInterested" ColumnName="RefInterested" />
+          <ScalarProperty Name="RefLookingFor" ColumnName="RefLookingFor" />
+          <ScalarProperty Name="RefEducation" ColumnName="RefEducation" />
+          <ScalarProperty Name="RefSmoking" ColumnName="RefSmoking" />
+          <ScalarProperty Name="RefDrinking" ColumnName="RefDrinking" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="FriendbookSQLModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="RefReceiver" ColumnName="RefReceiver" />
+          <ScalarProperty Name="RefSender" ColumnName="RefSender" />
+          <ScalarProperty Name="Message1" ColumnName="Message" />
+          <ScalarProperty Name="RefMessage" ColumnName="RefMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

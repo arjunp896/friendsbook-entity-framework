@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FriendbookSQLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BodyTypes">
+          <Key>
+            <PropertyRef Name="RefBodyType" />
+          </Key>
+          <Property Name="RefBodyType" Type="int" Nullable="false" />
+          <Property Name="BodyTypeName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="DrinkingTypes">
+          <Key>
+            <PropertyRef Name="RefDrinking" />
+          </Key>
+          <Property Name="RefDrinking" Type="int" Nullable="false" />
+          <Property Name="DrinkingType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Educations">
+          <Key>
+            <PropertyRef Name="RefEducation" />
+          </Key>
+          <Property Name="RefEducation" Type="int" Nullable="false" />
+          <Property Name="EducationType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Ethinicities">
+          <Key>
+            <PropertyRef Name="RefEthinicity" />
+          </Key>
+          <Property Name="RefEthinicity" Type="int" Nullable="false" />
+          <Property Name="EthinicityName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Interested">
+          <Key>
+            <PropertyRef Name="RefInterested" />
+          </Key>
+          <Property Name="RefInterested" Type="int" Nullable="false" />
+          <Property Name="InterestedType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LookingFor">
+          <Key>
+            <PropertyRef Name="RefLookingFor" />
+          </Key>
+          <Property Name="RefLookingFor" Type="int" Nullable="false" />
+          <Property Name="LookingType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="RefMessage" />
+          </Key>
+          <Property Name="RefMessage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="RefSender" Type="int" />
+          <Property Name="RefReceiver" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Religions">
+          <Key>
+            <PropertyRef Name="RefReligion" />
+          </Key>
+          <Property Name="RefReligion" Type="int" Nullable="false" />
+          <Property Name="ReligionName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SmokingTypes">
+          <Key>
+            <PropertyRef Name="RefSmoking" />
+          </Key>
+          <Property Name="RefSmoking" Type="int" Nullable="false" />
+          <Property Name="SmokingType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="RefUser" />
+          </Key>
+          <Property Name="RefUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="25" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="gender" Type="nvarchar" MaxLength="25" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="psw" Type="nvarchar" MaxLength="255" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="postalcode" Type="nvarchar" MaxLength="15" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
+          <Property Name="height" Type="nvarchar" MaxLength="10" />
+          <Property Name="RefBodyType" Type="int" />
+          <Property Name="RefEthinicity" Type="int" />
+          <Property Name="RefReligion" Type="int" />
+          <Property Name="RefInterested" Type="int" />
+          <Property Name="RefLookingFor" Type="int" />
+          <Property Name="RefEducation" Type="int" />
+          <Property Name="RefSmoking" Type="int" />
+          <Property Name="RefDrinking" Type="int" />
+        </EntityType>
+        <EntityContainer Name="FriendbookSQLModelStoreContainer">
+          <EntitySet Name="BodyTypes" EntityType="Self.BodyTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrinkingTypes" EntityType="Self.DrinkingTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Educations" EntityType="Self.Educations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ethinicities" EntityType="Self.Ethinicities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Interested" EntityType="Self.Interested" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LookingFor" EntityType="Self.LookingFor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Religions" EntityType="Self.Religions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmokingTypes" EntityType="Self.SmokingTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FriendbookSQLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BodyType">
+          <Key>
+            <PropertyRef Name="RefBodyType" />
+          </Key>
+          <Property Name="RefBodyType" Type="Int32" Nullable="false" />
+          <Property Name="BodyTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DrinkingType">
+          <Key>
+            <PropertyRef Name="RefDrinking" />
+          </Key>
+          <Property Name="RefDrinking" Type="Int32" Nullable="false" />
+          <Property Name="DrinkingType1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="RefEducation" />
+          </Key>
+          <Property Name="RefEducation" Type="Int32" Nullable="false" />
+          <Property Name="EducationType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ethinicity">
+          <Key>
+            <PropertyRef Name="RefEthinicity" />
+          </Key>
+          <Property Name="RefEthinicity" Type="Int32" Nullable="false" />
+          <Property Name="EthinicityName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Interested">
+          <Key>
+            <PropertyRef Name="RefInterested" />
+          </Key>
+          <Property Name="RefInterested" Type="Int32" Nullable="false" />
+          <Property Name="InterestedType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LookingFor">
+          <Key>
+            <PropertyRef Name="RefLookingFor" />
+          </Key>
+          <Property Name="RefLookingFor" Type="Int32" Nullable="false" />
+          <Property Name="LookingType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Religion">
+          <Key>
+            <PropertyRef Name="RefReligion" />
+          </Key>
+          <Property Name="RefReligion" Type="Int32" Nullable="false" />
+          <Property Name="ReligionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SmokingType">
+          <Key>
+            <PropertyRef Name="RefSmoking" />
+          </Key>
+          <Property Name="RefSmoking" Type="Int32" Nullable="false" />
+          <Property Name="SmokingType1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="RefUser" />
+          </Key>
+          <Property Name="RefUser" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="psw" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="postalcode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="height" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RefBodyType" Type="Int32" />
+          <Property Name="RefEthinicity" Type="Int32" />
+          <Property Name="RefReligion" Type="Int32" />
+          <Property Name="RefInterested" Type="Int32" />
+          <Property Name="RefLookingFor" Type="Int32" />
+          <Property Name="RefEducation" Type="Int32" />
+          <Property Name="RefSmoking" Type="Int32" />
+          <Property Name="RefDrinking" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="FriendbookSQLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BodyTypes" EntityType="Self.BodyType" />
+          <EntitySet Name="DrinkingTypes" EntityType="Self.DrinkingType" />
+          <EntitySet Name="Educations" EntityType="Self.Education" />
+          <EntitySet Name="Ethinicities" EntityType="Self.Ethinicity" />
+          <EntitySet Name="Interesteds" EntityType="Self.Interested" />
+          <EntitySet Name="LookingFors" EntityType="Self.LookingFor" />
+          <EntitySet Name="Religions" EntityType="Self.Religion" />
+          <EntitySet Name="SmokingTypes" EntityType="Self.SmokingType" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Messages" EntityType="FriendbookSQLModel.Message" />
+        </EntityContainer>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="RefMessage" />
+          </Key>
+          <Property Name="RefMessage" Type="Int32" Nullable="false" />
+          <Property Name="Message1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RefSender" Type="Int32" />
+          <Property Name="RefReceiver" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FriendbookSQLModelStoreContainer" CdmEntityContainer="FriendbookSQLEntities">
+          <EntitySetMapping Name="BodyTypes">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.BodyType">
+              <MappingFragment StoreEntitySet="BodyTypes">
+                <ScalarProperty Name="RefBodyType" ColumnName="RefBodyType" />
+                <ScalarProperty Name="BodyTypeName" ColumnName="BodyTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrinkingTypes">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.DrinkingType">
+              <MappingFragment StoreEntitySet="DrinkingTypes">
+                <ScalarProperty Name="RefDrinking" ColumnName="RefDrinking" />
+                <ScalarProperty Name="DrinkingType1" ColumnName="DrinkingType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Educations">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.Education">
+              <MappingFragment StoreEntitySet="Educations">
+                <ScalarProperty Name="RefEducation" ColumnName="RefEducation" />
+                <ScalarProperty Name="EducationType" ColumnName="EducationType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ethinicities">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.Ethinicity">
+              <MappingFragment StoreEntitySet="Ethinicities">
+                <ScalarProperty Name="RefEthinicity" ColumnName="RefEthinicity" />
+                <ScalarProperty Name="EthinicityName" ColumnName="EthinicityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Interesteds">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.Interested">
+              <MappingFragment StoreEntitySet="Interested">
+                <ScalarProperty Name="RefInterested" ColumnName="RefInterested" />
+                <ScalarProperty Name="InterestedType" ColumnName="InterestedType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LookingFors">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.LookingFor">
+              <MappingFragment StoreEntitySet="LookingFor">
+                <ScalarProperty Name="RefLookingFor" ColumnName="RefLookingFor" />
+                <ScalarProperty Name="LookingType" ColumnName="LookingType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Religions">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.Religion">
+              <MappingFragment StoreEntitySet="Religions">
+                <ScalarProperty Name="RefReligion" ColumnName="RefReligion" />
+                <ScalarProperty Name="ReligionName" ColumnName="ReligionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmokingTypes">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.SmokingType">
+              <MappingFragment StoreEntitySet="SmokingTypes">
+                <ScalarProperty Name="RefSmoking" ColumnName="RefSmoking" />
+                <ScalarProperty Name="SmokingType1" ColumnName="SmokingType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="RefUser" ColumnName="RefUser" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="psw" ColumnName="psw" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="postalcode" ColumnName="postalcode" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="RefBodyType" ColumnName="RefBodyType" />
+                <ScalarProperty Name="RefEthinicity" ColumnName="RefEthinicity" />
+                <ScalarProperty Name="RefReligion" ColumnName="RefReligion" />
+                <ScalarProperty Name="RefInterested" ColumnName="RefInterested" />
+                <ScalarProperty Name="RefLookingFor" ColumnName="RefLookingFor" />
+                <ScalarProperty Name="RefEducation" ColumnName="RefEducation" />
+                <ScalarProperty Name="RefSmoking" ColumnName="RefSmoking" />
+                <ScalarProperty Name="RefDrinking" ColumnName="RefDrinking" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="FriendbookSQLModel.Message">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="RefReceiver" ColumnName="RefReceiver" />
+                <ScalarProperty Name="RefSender" ColumnName="RefSender" />
+                <ScalarProperty Name="Message1" ColumnName="Message" />
+                <ScalarProperty Name="RefMessage" ColumnName="RefMessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
